@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Favicon-->
+	<link rel="shortcut icon" href="img/fav.png">
+	<!-- Author Meta -->
+	<meta name="author" content="CodePixar">
+	<!-- Meta Description -->
+	<meta name="description" content="">
+	<!-- Meta Keyword -->
+	<meta name="keywords" content="">
+	<!-- meta character set -->
+	<meta charset="UTF-8">
+	<!-- Site Title -->
+	<title>Trang chủ</title>
+	<!--
+		CSS
+		============================================= -->
+	<link rel="stylesheet" href="css/linearicons.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/themify-icons.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/nice-select.css">
+	<link rel="stylesheet" href="css/nouislider.min.css">
+	<link rel="stylesheet" href="css/ion.rangeSlider.css" />
+	<link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css" />
+	<link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/main.css">
+    
+</head>
+
+<body>
+
+	<!-- Start Header Area -->
+	<% include header %>
+	<!-- End Header Areax -->
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title" id="horz-layout-card-center">Tìm kiếm</h4>
+                    <a class="heading-elements-toggle"><i
+                        class="fa fa-ellipsis-v font-medium-3"></i></a>
+                </div>
+                <div class="card-body collapse in">
+                    <div class="card-block">
+                        <form class="form form-horizontal"
+                            method='GET'>
+                            <div class="form-body">
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="ward_id">Chi nhánh</label>
+                                    <div class="col-md-9">
+                                        <select class="form-control" id="branchId" name="branchId">
+                                            <option value="0">Chọn chi nhánh</option>
+                                            <c:forEach items="${branches}" var="branch">
+                                                <option value="${branch.getId()}">${branch.getName()}</option>
+                                            </c:forEach>
+                                        </select>
+                                    </div>
+                                </div>
+    
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="ward_id">Trạng
+                                        thái</label>
+                                    <div class="col-md-9">
+                                        <select class="form-control" id="status" name="status"
+                                            name="status">
+                                            <option value="-1">Chọn trạng thái</option>
+                                            <option value="1">Đang làm việc</option>
+                                            <option value="0">Đã ngưng làm việc</option>
+                                        </select>
+                                    </div>
+                                </div>
+    
+                                <div class="form-group row">
+                                    <label class="col-md-3 label-control" for="name">Tên</label>
+                                    <div class="col-md-9">
+                                        <input type="text" id="name" class="form-control"
+                                            placeholder="Tên nhân viên" name="name">
+                                    </div>
+                                </div>
+    
+                                
+                            </div>
+    
+                            <div class="form-actions center">
+                                <button type="button" class="btn btn-warning mr-1">
+                                    <i class="ft-x"></i> Reset
+                                </button>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="ft-search"></i> Tìm kiếm
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Danh sách quản lý chi nhánh</h4>
+                    <a class="heading-elements-toggle"><i
+                        class="fa fa-ellipsis-v font-medium-3"></i></a>
+                    <div class="heading-elements">
+                            <button type="button"  class="btn btn-icon btn-primary mr-1">
+                                <i class="ft-plus-circle"></i>
+                            </button>
+                    </div>
+                </div>
+                <div class="card-body collapse in">
+                    <div class="table-responsive">
+                        <table class="table table-bordered mb-0">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Tài khoản</th>
+                                    <th>Tên</th>
+                                    <th>Chức vụ</th>
+                                    <th>Chi nhánh</th>
+                                    <th>Nơi sinh</th>
+                                    <th>Trạng thái</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                    <tr>
+                                            <th>Id</th>
+                                            <th>Tài khoản</th>
+                                            <th>Tên</th>
+                                            <th>Chức vụ</th>
+                                            <th>Chi nhánh</th>
+                                            <th>Nơi sinh</th>
+                                            <th>Trạng thái</th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                <!-- <c:forEach items="${employees}" var="employee">
+                                    <tr>
+                                        <th scope="row">${employee.getId()}</th>
+                                        <td>${employee.getUsername()}</td>
+                                        <td>${employee.getFullName()}</td>
+                                        <td>${employee.getRoleEnumName()}</td>
+                                        <td>${employee.getBranch().getName()}</td>
+                                        <td>${employee.getBirthplace()}</td>
+                                        <td>${employee.getStatusHtml()}</td>
+                                        <td>
+                                            <c:choose>
+                                                <c:when test="${employee.getStatus()}">
+                                                    <button onclick="changeStatus(${employee.getId()});return false;" type="button" class="btn mr-1 mb-1 btn-danger btn-sm"><i class="fa fa-times"></i></button>
+                                                </c:when>
+                                                <c:otherwise>
+                                                    <button onclick="changeStatus(${employee.getId()});return false;" type="button" class="btn mr-1 mb-1 btn-primary btn-sm"><i class="fa fa-check"></i></button>
+                                                </c:otherwise>
+                                            </c:choose>
+                                        </td>
+                                        <td>
+                                            <button onclick="location.href='<c:url value='/employees/${employee.getId()}' />'" type="button" class="btn mr-1 mb-1 btn-info btn-sm"><i class="ft-edit"></i></button>
+                                        </td>
+                                        <td>
+                                            <button onclick="location.href='<c:url value='/employees/${employee.getId()}/permissions' />'" type="button" class="btn mr-1 mb-1 btn-warning btn-sm"><i class="ft-users"></i></button>
+                                        </td>
+                                    </tr>
+                                </c:forEach> -->
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="card-block">
+                         <div class="row">
+                             <div class="col-xl-12 col-lg-12">
+                                 <div class="text-xs-right mb-3">
+                                     <nav aria-label="Page navigation">
+                                         <c:if test="${totalRecord > 1}">
+                                             <tag:paginate currentPage="${currentPage}" totalRecord="${totalRecord}"
+                                                          limit="${limit}" max="3"  next="&raquo;" previous="&laquo;"
+                                                          params="${requestScope['javax.servlet.forward.query_string']}" />
+                                         </c:if>
+                                     </nav>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<!-- end product Area -->
+
+	<!-- Start sexclusive deal Area -->
+	
+	<!-- End exclusive deal Area -->
+
+	<!-- Start brand Area -->
+	
+	<!-- End related-product Area -->
+
+	<!-- start footer Area -->
+	<% include footer %>
+	<!-- End footer Area -->
+
+    
+    <script src="org.apache.velocity.runtime.directive.Foreach"></script>
+    <script src="http://java.sun.com/jsp/jstl/core"></script>
+    <script src="http://www.springframework.org/security/tags"></script>
+	<script src="js/vendor/jquery-2.2.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+	 crossorigin="anonymous"></script>
+	<script src="js/vendor/bootstrap.min.js"></script>
+	<script src="js/jquery.ajaxchimp.min.js"></script>
+	<script src="js/jquery.nice-select.min.js"></script>
+	<script src="js/jquery.sticky.js"></script>
+	<script src="js/nouislider.min.js"></script>
+	<script src="js/countdown.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<!--gmaps Js-->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+	<script src="js/gmaps.min.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>
