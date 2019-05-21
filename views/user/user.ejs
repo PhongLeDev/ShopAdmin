@@ -35,7 +35,66 @@
     <!-- Start Header Area -->
 	<% include ./../default/header %>
 	<!-- End Header Area -->
-
+    <!-- Modal Popup -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Sửa thông tin khách hàng</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            <form action="user/create" method="POST" >
+                <input type="hidden" class="form-control" placeholder="id" id="id" name="id">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="recipient-name" class="col-form-label">Tên:</label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" placeholder="Tên khách hàng"
+                                id="name" name="name">
+                        </div>
+                    </div>
+                </div>
+               
+                <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <label for="message-text" class="col-form-label">Số điện thoại</label>
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" placeholder="Số điện thoại"
+                                    id="phone" name="phone">
+                            </div>
+                        </div>
+                    </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="message-text" class="col-form-label">Địa chỉ:</label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" placeholder="Địa chỉ"
+                                id="address" name="address">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+                        <button type="submit" class="btn btn-primary">Lưu</button>
+                    </div>
+            </form>
+        </div>
+            
+        </div>
+    </div>
+</div>
+    <!-- End Modal Popup -->
     <!-- Start Banner Area -->
     <section class="banner-area organic-breadcrumb">
         <div class="container">
@@ -46,6 +105,12 @@
                 </div>
             </div>
         </div>
+        <div class="container">
+                <button data-toggle="modal" data-target="#exampleModal"
+                        data-original-title="Sửa thông tin" type="button"
+                        class="btn btn-icon btn-primary btn-sm show-tooltip"><i
+                        class="ft-plus-circle"></i></button>
+        </div>
     </section>
     <!-- End Banner Area -->
 
@@ -54,13 +119,15 @@
         <div class="container">
             <div class="cart_inner">
                 <div class="table-responsive">
-                    <table class="table">
+                    <table class="table" id="table-data">
                         <thead>
                             <tr>
                                 <th scope="col">ID</th>
                                 <th scope="col">Ten</th>
                                 <th scope="col">Dia Chi</th>
                                 <th scope="col">SDT</th>
+                                <th scope="col">Sửa</th>
+                                <th scope="col">Xóa</th>
                             </tr>
                         </thead>
                         
@@ -71,7 +138,20 @@
                                     <td><%= employees[i].name %></td>
                                     <td><%= employees[i].address %></td>
                                     <td><%= employees[i].phone %></td>
+                                    <td>
+                                            <button data-toggle="modal" data-target="#exampleModal"
+                                                data-original-title="Sửa thông tin" type="button"
+                                                class="btn btn-icon btn-primary btn-sm show-tooltip getData"><i
+                                                    class="fa fa-pencil"></i></button>
+                                    </td>
+                                    <td>
+                                            <button
+                                                onclick="location.href='user/detele/<%=employees[i].id%>'"
+                                                type="button" class="btn mr-1 mb-1 btn-danger btn-sm"><i
+                                                    class="fa fa-times"></i></button>
+                                        </td>
                                 </tr>
+                                
                                 <%}
                             %>    
                         </tbody>
@@ -100,7 +180,22 @@
 	<!--gmaps Js-->
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 	<script src="js/gmaps.min.js"></script>
-	<script src="js/main.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+            var  rIndex,table = document.getElementById("table-data");
+            
+                   $(".getData").click(function () {
+                       for (var i = 1; i < table.rows.length; i++) {
+                           table.rows[i].onclick = function () {
+                               rIndex = this.rowIndex;
+                           document.getElementById("id").value = this.cells[0].innerHTML;
+                           document.getElementById("name").value = this.cells[1].innerHTML;
+                           document.getElementById("address").value = this.cells[2].innerHTML;
+                           document.getElementById("phone").value = this.cells[3].innerHTML;
+                           };
+                       }
+                   });
+    </script>
 </body>
 
 </html>

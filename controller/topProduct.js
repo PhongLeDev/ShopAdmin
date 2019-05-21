@@ -1,13 +1,8 @@
 var express = require('express');
 var con = require('./../connect/connection');
 var router = express.Router();
+const topProduct = require('./../model/topProduct');
 
-var topProduct = function(id, name, price, amount){
-  this.id = id;
-  this.name = name;
-  this.price = price;
-  this.amount = amount;
-}
 
 var topProducts = [];
  

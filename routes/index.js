@@ -9,8 +9,12 @@ var topProduct = require("../controller/topProduct");
 
 /* GET home page. */
 router.get('/',index.home);
-router.get('/product',product.home);
-router.get('/user',user.home);
+router.get('/product',product.list);
+router.post('/product/create',product.create);
+router.post('/product/delete',product.create);
+router.get('/user',user.list);
+router.post('/user/create',user.create);
+router.get('/user/detele/:id', user.delete);
 router.get('/topProduct',topProduct.home);
 
 
