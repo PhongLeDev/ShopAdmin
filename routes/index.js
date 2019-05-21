@@ -11,7 +11,7 @@ var topProduct = require("../controller/topProduct");
 router.get('/',index.home);
 router.get('/product',product.list);
 router.post('/product/create',product.create);
-router.post('/product/delete',product.create);
+router.post('/product/delete/:id',product.delete);
 router.get('/user',user.list);
 router.post('/user/create',user.create);
 router.get('/user/detele/:id', user.delete);

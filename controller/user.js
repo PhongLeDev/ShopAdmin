@@ -27,17 +27,6 @@ router.list = (req, res, next) => {
   res.render('user/user', {employees: employees});
 };
 
-router.list = (req, res, next) => {
-  con.query('select * from employees', function (err, rows, fields) {
-    if (err) throw err 
-    employees= [];
-    rows.forEach(element => {
-      var x = new user(element.id, element.name, element.address, element.phone);
-      employees.push(x);
-    })
-  });
-  res.render('user/user', {employees: employees});
-};
 router.create = (req,res,next) => {
   let name = req.body.name;
   let id = req.body.id;

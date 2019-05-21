@@ -128,17 +128,18 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-                <button data-toggle="modal" data-target="#exampleModal"
-                        data-original-title="Sửa thông tin" type="button"
-                        class="btn btn-icon btn-primary btn-sm show-tooltip"><i
-                        class="ft-plus-circle"></i></button>
-            </div>
+        
     </section>
     <!-- End Banner Area -->
 
     <!--================Cart Area =================-->
     <section class="cart_area">
+            <div class="container">
+                    <button data-toggle="modal" data-target="#exampleModal"
+                            data-original-title="Sửa thông tin" type="button"
+                            class="btn btn-icon btn-primary btn-sm show-tooltip"><i
+                            class="ft-plus-circle">Add</i></button>
+                </div>
         <div class="container">
             <div class="cart_inner">
                 <div class="table-responsive">
@@ -152,6 +153,7 @@
                                     <th scope="col">Nhà sản xuất</th>
                                     <th scope="col">Mô tả</th>   
                                     <th scope="col">Sửa</th>    
+                                    <th scope="col">Xóa</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -168,6 +170,12 @@
                                                         data-original-title="Sửa thông tin" type="button"
                                                         class="btn btn-icon btn-primary btn-sm show-tooltip getData"><i
                                                             class="fa fa-pencil"></i></button>
+                                            </td>
+                                            <td>
+                                                <button
+                                                    onclick="location.href='product/detele/<%=products[i].id%>'"
+                                                    type="button" class="btn mr-1 mb-1 btn-danger btn-sm"><i
+                                                        class="fa fa-times"></i></button>
                                             </td>
                                         </tr>
                                         <%}
