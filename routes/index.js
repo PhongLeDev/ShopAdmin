@@ -6,6 +6,7 @@ var product = require("../controller/product");
 var user = require("../controller/user");
 var topProduct = require("../controller/topProduct");
 var login = require("../controller/login");
+var signUp = require("../controller/signUp");
 
 /* GET home page. */
 router.get('/',index.home);
@@ -18,6 +19,7 @@ router.get('/user/detele/:id', user.delete);
 router.get('/topProduct',topProduct.home);
 router.get('/login',login.home);
 router.post('/login/list',login.list);
+router.get('/signUp',signUp.home);
 
 
 
