@@ -15,7 +15,7 @@
     <!-- meta character set -->
     <meta charset="UTF-8">
     <!-- Site Title -->
-    <title>Đăng nhập</title>
+    <title>Đăng ký</title>
 
     <!--
         CSS
@@ -41,10 +41,10 @@
     <div class="container">
         <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
             <div class="col-first">
-                <h1>Login/Register</h1>
+                <h1>Đăng ký tài khoản</h1>
                 <nav class="d-flex align-items-center">
-                    <a href="index.html">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
-                    <a href="category.html">Đăng nhập/Đăng ký</a>
+                    <a href="index.html">Đăng nhập<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="category.html">Tạo tài khoản quản trị</a>
                 </nav>
             </div>
         </div>
@@ -52,36 +52,59 @@
 </section>
 <!-- End Banner Area -->
 
-<!--================Login Box Area =================-->
-<div id="register" class="animate form">
-    <form  action="mysuperscript.php" autocomplete="on">
-        <h1> Sign up </h1>
-        <p>
-            <label for="usernamesignup" class="uname" data-icon="u">Your username</label>
-            <input id="usernamesignup" name="usernamesignup" required="required" type="text" placeholder="mysuperusername690" />
-        </p>
-        <p>
-            <label for="emailsignup" class="youmail" data-icon="e" > Your email</label>
-            <input id="emailsignup" name="emailsignup" required="required" type="email" placeholder="mysupermail@mail.com"/>
-        </p>
-        <p>
-            <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label>
-            <input id="passwordsignup" name="passwordsignup" required="required" type="password" placeholder="eg. X8df!90EO"/>
-        </p>
-        <p>
-            <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label>
-            <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
-        </p>
-        <p class="signin button">
-            <input type="submit" value="Sign up"/>
-        </p>
-        <p class="change_link">
-            Already a member ?
-            <a href="#tologin" class="to_register"> Go and log in </a>
-        </p>
-    </form>
-</div>
-<!--================End Login Box Area =================-->
+<!--================Sign up Box Area =================-->
+<section class="login_box_area section_gap">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="signup_box_img">
+                    <img class="img-fluid" src="img/login.jpg" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="login_form_inner">
+
+                    <form class="row login_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                        <div class="col-md-12 form-group">
+                            <h5>Họ tên</h5>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="" onfocus="this.placeholder = ''" onblur="this.placeholder = ''">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <h5>Địa chỉ</h5>
+                            <input type="text" class="form-control" id="address" name="address" placeholder="" onfocus="this.placeholder = ''" onblur="this.placeholder = ''">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <h5>Số điện thoại</h5>
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="" onfocus="this.placeholder = ''" onblur="this.placeholder = ''">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <h5>Username</h5>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="" onfocus="this.placeholder = ''" onblur="this.placeholder = ''">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <h5>Mật khẩu</h5>
+                            <input type="text" class="form-control" id="pass" name="pass" placeholder="" onfocus="this.placeholder = ''" onblur="this.placeholder = ''">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <h5>Nhập lại mật khẩu</h5>
+                            <input type="text" class="form-control" id="re-pass" name="re-pass" placeholder="" onfocus="this.placeholder = ''" onblur="this.placeholder = ''">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <div class="creat_account">
+                                <input type="checkbox" id="f-option2" name="selector">
+                                <label for="f-option2">I agree to the Term of User</label>
+                            </div>
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <button type="submit" value="submit" class="primary-btn" >Sign up</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--================End Sign up Box Area =================-->
 
 <!-- start footer Area -->
 <% include ./../default/footer %>
@@ -103,25 +126,6 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 <script src="js/gmaps.min.js"></script>
 <script src="js/main.js"></script>
-
-<!--===============================================================================================-->
-<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/bootstrap/js/popper.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/daterangepicker/moment.min.js"></script>
-<script src="vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-<script src="vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-<script src="js/main.js"></script>
-
-
 </body>
 
 </html>

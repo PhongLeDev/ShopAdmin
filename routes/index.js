@@ -18,7 +18,7 @@ router.post('/user/create',user.create);
 router.get('/user/detele/:id', user.delete);
 router.get('/topProduct',topProduct.home);
 router.get('/login',login.home);
-router.post('/login/list',login.list);
+/*router.post('/login/list',login.list);*/
 router.get('/signUp',signUp.home);
 
 

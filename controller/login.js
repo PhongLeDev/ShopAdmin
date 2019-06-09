@@ -8,7 +8,7 @@ var listUser = [];
 
 /* GET home page. */
 router.home =  (req, res, next) => {
-    res.render('login/login', { title: 'Express' });
+    res.render('login/login', { title: 'Login' });
 };
 
 /* GET users listing. */
