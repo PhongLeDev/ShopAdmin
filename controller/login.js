@@ -1,20 +1,23 @@
 var express = require('express');
-var con = require('./../connect/connection');
+var con = require('../config/key');
 var router = express.Router();
+var passport = require('passport'); // pass passport for configuration
 
 
 var listUser = [];
 
 /* GET home page. */
 router.home =  (req, res, next) => {
-    /*res.render('login/login', { title: 'Login' });*/
-    if(req.isAuthenticated()) {
-        res.render('index', { title: 'Quản lí bán hàng' ,user: req.user});
-    }
-    else {
-        req.flash('loginMessage')
-        res.redirect('/login');
-    }
+    // /*res.render('login/login', { title: 'Login' });*/
+    // if(req.isAuthenticated()) {
+    //     res.render('index', { title: 'Quản lí bán hàng' ,user: req.user});
+    // }
+    // else {
+    //     req.flash('loginMessage')
+    //     res.redirect('/login');
+    // }
+    res.render('login/login');
+
 };
 
 router.logout=(req,res,next)=> {

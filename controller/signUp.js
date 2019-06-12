@@ -1,53 +1,53 @@
 var express = require('express');
-var con = require('./../connect/connection');
+var con = require('../config/key');
 var router = express.Router();
 const employees = require('./../model/employees');
-
-
-
-/* GET home page.
+var passport= require('passport');
+// GET home page.
 router.home =  (req, res, next) => {
     res.render('signUp/signUp', { title: 'Express' });
-};*/
+};
 
 
 
-con.query('select * from employees', function (err, rows, fields) {
-    if (err) throw err
+// con.query('select * from employees', function (err, rows, fields) {
+//     if (err) throw err
 
-    rows.forEach(element => {
-        var x = new employees(element.id, element.name, element.address, element.phone,element.username,element.password);
-        employees.push(x);
-    })
-});
+//     rows.forEach(element => {
+//         var x = new employees(element.id, element.name, element.address, element.phone,element.username,element.password);
+//         employees.push(x);
+//     })
+// });
 
 
 
 router.create = (req,res,next) => {
-    let name = req.body.name;
-    let id = req.body.id;
-    let address = req.body.address;
-    let phone = req.body.phone;
-    let username = req.body.username;
-    let password = req.body.password;
-
-    if (id == ""){
-        let sql ='INSERT INTO employees(name,address,phone,username,password) VALUES ("'+name+'","'+address+'","'+phone+'","'+username+'","'+password+'")';
-        con.query(sql);
-    }
-    else{
-        let sql = 'UPDATE employees SET name="'+name+'",address="'+address+'" , phone= "'+phone+'","'+username+'","'+password+'" WHERE id='+id;
-        con.query(sql);
-    }
-    con.query('select * from employees', function (err, rows, fields) {
-        if (err) throw err
-        /*employees= [];*/
-        rows.forEach(element => {
-            var x = new user(element.id, element.name, element.address, element.phone);
-            employees.push(x);
-        })
-    });
-    res.redirect('/user');
-
+    passport.authenticate('local-signup',{
+        successRedirect: '/login',
+        failureRedirect: '/signup',
+        failureFlash: true
+      },function (err,user,info){
+        if(err) {
+          req.flash('loginMessage', err.message)
+          return res.redirect('/signup');
+        }
+    
+        if(!user) {
+          req.flash('loginMessage', 'Tài khoản hoặc mật khẩu không chính xác')
+        
+          return res.redirect('/signup');
+        }
+    
+        return req.logIn(user, function(err) {
+            if(err) {
+              req.flash('loginMessage', 'Tài khoản hoặc mật khẩu không chính xác')
+        
+              return res.redirect('/signup');
+              
+            } else {
+                return res.redirect('/login');
+            }
+        });
+      })(req, res, next);
 }
 module.exports = router;

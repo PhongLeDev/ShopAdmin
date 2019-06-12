@@ -6,7 +6,7 @@ var LocalStrategy   = require('passport-local').Strategy;
 // load up the user model
 
 var bcrypt = require('bcrypt-nodejs');
-var con = require('./../config/key');
+var con = require('./key');
 
 // expose this function to our app using module.exports
 module.exports = function(passport) {
@@ -46,10 +46,12 @@ module.exports = function(passport) {
             let phone = req.body.phone;
             let address = req.body.address;
             let name = req.body.name;
+            let email = req.body.email;
+
             console.log(username+password+phone+address+name);
             // find a user whose email is the same as the forms email
             // we are checking to see if the user trying to login already exists
-            con.query("SELECT * FROM employees WHERE account = ?",[username], function(err, rows) {
+            con.query("SELECT * FROM employees WHERE username = ?",[username], function(err, rows) {
                 if (err){
                     console.log(err.message);
                     return done(err);
@@ -65,9 +67,9 @@ module.exports = function(passport) {
                         password: bcrypt.hashSync(password, null, null)  // use the generateHash function in our user model
                     };
                     console.log(newUserMysql);
-                    // var insertQuery = "INSERT INTO customers ( account, password ) values (?,?)";
-                    var insertQuery = "INSERT INTO employees(name, phone, address,account,password,status) values (?,?,?,?,?,?)"
-                    con.query(insertQuery,[name,phone,address,newUserMysql.username, newUserMysql.password,1],function(err, rows) {
+                    // var insertQuery = "INSERT INTO customers ( username, password ) values (?,?)";
+                    var insertQuery = "INSERT INTO employees(name, address, phone,username,password,email) values (?,?,?,?,?,?)"
+                    con.query(insertQuery,[name,address,phone,newUserMysql.username, newUserMysql.password,email,1],function(err, rows) {
                         
                         
                         return done(null, newUserMysql);
@@ -94,7 +96,7 @@ module.exports = function(passport) {
         function(req, username, password, done) { // callback with email and password from our form
             console.log(username+password);
            
-            con.query("SELECT * FROM employees WHERE account = ? ",[username], function(err, rows){
+            con.query("SELECT * FROM employees WHERE username = ? ",[username], function(err, rows){
                 
                 if (err){
                 console.log("error");

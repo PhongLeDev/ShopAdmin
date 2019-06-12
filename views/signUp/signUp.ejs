@@ -63,40 +63,29 @@
             </div>
             <div class="col-lg-6">
                 <div class="login_form_inner">
-
-                    <form class="row login_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+                    <h3>Đăng nhập</h3>
+                    <form class="row login_form" action="signUp/create" method="POST" id="contactForm" novalidate="novalidate">
                         <div class="col-md-12 form-group">
-                            <h5>Họ tên</h5>
-                            <input type="text" class="form-control" id="name" name="name" placeholder="" onfocus="this.placeholder = ''" onblur="this.placeholder = ''">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'name'">
                         </div>
                         <div class="col-md-12 form-group">
-                            <h5>Địa chỉ</h5>
-                            <input type="text" class="form-control" id="address" name="address" placeholder="" onfocus="this.placeholder = ''" onblur="this.placeholder = ''">
+                            <input type="text" class="form-control" id="email" name="email" placeholder="email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'email'">
                         </div>
                         <div class="col-md-12 form-group">
-                            <h5>Số điện thoại</h5>
-                            <input type="text" class="form-control" id="phone" name="phone" placeholder="" onfocus="this.placeholder = ''" onblur="this.placeholder = ''">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="username" onfocus="this.placeholder = ''" onblur="this.placeholder = 'username'">
                         </div>
                         <div class="col-md-12 form-group">
-                            <h5>Username</h5>
-                            <input type="text" class="form-control" id="username" name="username" placeholder="" onfocus="this.placeholder = ''" onblur="this.placeholder = ''">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
                         </div>
                         <div class="col-md-12 form-group">
-                            <h5>Mật khẩu</h5>
-                            <input type="text" class="form-control" id="pass" name="pass" placeholder="" onfocus="this.placeholder = ''" onblur="this.placeholder = ''">
+                            <input type="text" class="form-control" id="phone" name="phone" placeholder="phone" onfocus="this.placeholder = ''" onblur="this.placeholder = 'phone'">
                         </div>
                         <div class="col-md-12 form-group">
-                            <h5>Nhập lại mật khẩu</h5>
-                            <input type="text" class="form-control" id="re-pass" name="re-pass" placeholder="" onfocus="this.placeholder = ''" onblur="this.placeholder = ''">
+                            <input type="text" class="form-control" id="address" name="address" placeholder="address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'address'">
                         </div>
+                    
                         <div class="col-md-12 form-group">
-                            <div class="creat_account">
-                                <input type="checkbox" id="f-option2" name="selector">
-                                <label for="f-option2">I agree to the Term of User</label>
-                            </div>
-                        </div>
-                        <div class="col-md-12 form-group">
-                            <button type="submit" value="submit" class="primary-btn" >Sign up</button>
+                            <button type="submit" value="submit" class="primary-btn">Sign up</button>
                         </div>
                     </form>
                 </div>

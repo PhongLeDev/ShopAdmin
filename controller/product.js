@@ -1,5 +1,5 @@
 var express = require('express');
-var con = require('./../connect/connection');
+var con = require('../config/key');
 var router = express.Router();
 const product = require('./../model/product');
 
