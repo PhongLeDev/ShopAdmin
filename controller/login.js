@@ -8,14 +8,7 @@ var listUser = [];
 
 /* GET home page. */
 router.home =  (req, res, next) => {
-    // /*res.render('login/login', { title: 'Login' });*/
-    // if(req.isAuthenticated()) {
-    //     res.render('index', { title: 'Quản lí bán hàng' ,user: req.user});
-    // }
-    // else {
-    //     req.flash('loginMessage')
-    //     res.redirect('/login');
-    // }
+
     res.render('login/login');
 
 };

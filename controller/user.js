@@ -6,7 +6,7 @@ const user = require('./../model/user');
 
 var employees = [];
  
-con.query('select * from employees', function (err, rows, fields) {
+con.query('select * from customers', function (err, rows, fields) {
   if (err) throw err
  
   rows.forEach(element => {
@@ -16,7 +16,7 @@ con.query('select * from employees', function (err, rows, fields) {
 });
 /* GET users listing. */
 router.list = (req, res, next) => {
-  con.query('select * from employees', function (err, rows, fields) {
+  con.query('select * from customers', function (err, rows, fields) {
     if (err) throw err
    employees = [];
     rows.forEach(element => {
@@ -34,14 +34,14 @@ router.create = (req,res,next) => {
   let phone = req.body.phone;
   
   if (id == ""){
-    let sql ='INSERT INTO employees(name,address,phone) VALUES ("'+name+'","'+address+'","'+phone+'")';
+    let sql ='INSERT INTO customers(name,address,phone) VALUES ("'+name+'","'+address+'","'+phone+'")';
     con.query(sql);
   }
   else{
     let sql = 'UPDATE employees SET name="'+name+'",address="'+address+'" , phone= "'+phone+'" WHERE id='+id;
             con.query(sql);
   }
-  con.query('select * from employees', function (err, rows, fields) {
+  con.query('select * from customers', function (err, rows, fields) {
     if (err) throw err 
     employees= [];
     rows.forEach(element => {
@@ -51,12 +51,13 @@ router.create = (req,res,next) => {
   });
   res.redirect('/user');
   
-}
+};
+
 router.delete = (req,res,next) => {
  let id =req.params.id;
-  let sql = 'DELETE FROM employees WHERE id=' + id;
+  let sql = 'DELETE FROM customers WHERE id=' + id;
             con.query(sql);
-  con.query('select * from employees', function (err, rows, fields) {
+  con.query('select * from customers', function (err, rows, fields) {
     if (err) throw err 
     employees= [];
     rows.forEach(element => {
