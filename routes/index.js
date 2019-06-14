@@ -22,7 +22,17 @@ router.get('/login',login.home); //dang nhap
 router.post('/login/create',login.postLogin); //xac nhan dang nhap
 router.get('/signup',signUp.home); // dang ki
 router.post('/signUp/create',signUp.create); // xac nhan dang ki
-router.post('/category',category.list);
+router.get('/category',category.list);
+router.post('/category/create' , category.create);
+//
+function isLoggedIn(req, res, next) {
+    // if user is authenticated in the session, carry on
+    if (req.isAuthenticated())
+        return next();
+
+    // if they aren't redirect them to the home page
+    res.redirect('/');
+}
 
 
 module.exports = router;

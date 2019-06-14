@@ -1,4 +1,4 @@
-const category = function (id, name, status, description) {
+const category = function (id, name, description) {
   this.id = id;
   this.name = name;
   this.description = description;

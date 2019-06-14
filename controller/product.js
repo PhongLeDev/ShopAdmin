@@ -49,19 +49,19 @@ router.create = (req,res,next) => {
   
 }
 router.delete = (req,res,next) => {
-  let id =req.params.id;
+  let id = req.params.id;
   let sql = 'DELETE FROM products WHERE id=' + id;
-    con.query(sql);
+  con.query(sql);
   con.query('select * from products', function (err, rows, fields) {
-  if (err) throw err
-  products= [];
-  rows.forEach(element => {
-    var x = new product(element.id, element.name, element.price, element.producer,element.description,element.quantity);
-    products.push(x);
-  })
-});
-   res.redirect('/product');
- }
+    if (err) throw err
+    products = [];
+    rows.forEach(element => {
+      var x = new product(element.id, element.name, element.price, element.producer, element.description, element.quantity);
+      products.push(x);
+    })
+  });
+  res.redirect('/product');
+}
 
  
 module.exports = router;

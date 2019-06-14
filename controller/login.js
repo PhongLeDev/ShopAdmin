@@ -17,10 +17,10 @@ router.logout=(req,res,next)=> {
     req.logout();
     res.redirect('/login');
 }
-
+//no xac nhan tai khoan o cho~ nao
 router.postLogin = (req,res,next) =>{
     passport.authenticate('local-login',{
-        successRedirect: '/',
+        successRedirect: '/abc',
         failureRedirect: '/login',
         failureFlash: true
     },function(err, user, info) {

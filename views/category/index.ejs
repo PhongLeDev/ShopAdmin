@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+	<!-- Mobile Specific Meta -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Favicon-->
+	<link rel="shortcut icon" href="img/fav.png">
+	<!-- Author Meta -->
+	<meta name="author" content="CodePixar">
+	<!-- Meta Description -->
+	<meta name="description" content="">
+	<!-- Meta Keyword -->
+	<meta name="keywords" content="">
+	<!-- meta character set -->
+	<meta charset="UTF-8">
+	<!-- Site Title -->
+	<title>Quản lý sản phẩm trên gian hàng</title>
+
+	<!--
+            CSS
+            ============================================= -->
+	<link rel="stylesheet" href="css/linearicons.css">
+	<link rel="stylesheet" href="css/owl.carousel.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/themify-icons.css">
+	<link rel="stylesheet" href="css/nice-select.css">
+	<link rel="stylesheet" href="css/nouislider.min.css">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body >
+
+<!-- Start Header Area -->
+<% include ./../default/header %>
+<!-- End Header Area -->
+<!-- Modal Popup -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+	 aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Sửa thông tin sản phẩm</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form action="category/create" method="POST" >
+					<input type="hidden" class="form-control" placeholder="id" id="id" name="id">
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-3">
+								<label for="recipient-name" class="col-form-label">Tên:</label>
+							</div>
+							<div class="col-md-9">
+								<input type="text" class="form-control" placeholder="Tên gian hàng"
+									   id="name" name="name">
+							</div>
+						</div>
+					</div>
+
+
+
+					<div class="form-group">
+						<div class="row">
+							<div class="col-md-3">
+								<label for="message-text" class="col-form-label">Mô tả:</label>
+							</div>
+							<div class="col-md-9">
+								<input type="text" class="form-control" placeholder="Mô tả"
+									   id="description" name="description">
+							</div>
+						</div>
+					</div>
+
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
+						<button type="submit" class="btn btn-primary">Lưu</button>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+</div>
+<!-- End Modal Popup -->
+<!-- Start Banner Area -->
+
+<section class="banner-area organic-breadcrumb">
+
+	<div class="container">
+		<div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+			<div class="col-first">
+				<h1>Quản lý sản phẩm trên gian hàng</h1>
+
+			</div>
+		</div>
+	</div>
+
+</section>
+<!-- End Banner Area -->
+
+<!--================Cart Area =================-->
+<section class="cart_area">
+	<div class="container">
+		<button data-toggle="modal" data-target="#exampleModal"
+				data-original-title="Sửa thông tin" type="button"
+				class="btn btn-icon btn-primary btn-sm show-tooltip"><i
+					class="ft-plus-circle">Add</i></button>
+	</div>
+	<div class="container">
+		<div class="cart_inner">
+			<div class="table-responsive">
+				<table class="table" id="table-data">
+					<thead>
+					<tr>
+						<th scope="col">Id</th>
+						<th scope="col">Tên sản phẩm</th>
+						<th scope="col">Mô tả</th>
+						<th scope="col">Sửa</th>
+						<th scope="col">Xóa</th>
+					</tr>
+					</thead>
+					<tbody>
+					<% for(var i=0; i< categories.length; i++){ %>
+						<tr>
+							<td><%= categories[i].id %></td>
+							<td><%= categories[i].name %></td>
+							<td><%= categories[i].description %></td>
+							<td>
+								<button data-toggle="modal" data-target="#exampleModal"
+										data-original-title="Sửa thông tin" type="button"
+										class="btn btn-icon btn-primary btn-sm show-tooltip getData"><i
+											class="fa fa-pencil"></i></button>
+							</td>
+							<td>
+								<button
+										onclick="location.href='category/detele/<%=categories[i].id%>'"
+										type="button" class="btn mr-1 mb-1 btn-danger btn-sm"><i
+											class="fa fa-times"></i></button>
+							</td>
+						</tr>
+					<%}
+					%>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</section>
+<!--================End Cart Area =================-->
+
+
+
+
+
+
+<!-- start footer Area -->
+<% include ./../default/footer %>
+
+<!-- End footer Area -->
+
+
+
+
+<script src="js/vendor/jquery-2.2.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+		crossorigin="anonymous"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="js/jquery.nice-select.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/nouislider.min.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<!--gmaps Js-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+<script src="js/gmaps.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+	var  rIndex,table = document.getElementById("table-data");
+
+	$(".getData").click(function () {
+		for (var i = 1; i < table.rows.length; i++) {
+			table.rows[i].onclick = function () {
+				rIndex = this.rowIndex;
+				document.getElementById("id").value = this.cells[0].innerHTML;
+				document.getElementById("name").value = this.cells[1].innerHTML;
+				document.getElementById("description").value = this.cells[5].innerHTML;
+			};
+		}
+	});
+</script>
+</body>
+
+</html>
