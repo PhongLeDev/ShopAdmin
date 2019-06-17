@@ -11,7 +11,7 @@ var categoriesAll = [];
 
 // Set The Storage Engine
 const storage = multer.diskStorage({
-  destination: './public/uploads/',
+  destination: './public/img/product/',
   filename: function(req, file, cb){
     cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
   }
@@ -74,6 +74,8 @@ router.create = (req,res,next) => {
     } else {
       let file = req.file;
       let fileName="";
+      let test=req.file.originalname; 
+      
       if(file == undefined){
         fileName="";
       }
@@ -87,6 +89,8 @@ router.create = (req,res,next) => {
       let description = req.body.description;
       let quantity = req.body.quantity;
       let category_id = req.body.category_id;
+      console.log("test"+test);
+
       console.log("id"+id);
       console.log("price"+price);
       console.log("producer"+producer);
@@ -97,8 +101,8 @@ router.create = (req,res,next) => {
 
       console.log("name"+name);
       console.log("fileName"+fileName);
-      let linkImage = "https://shopadmink16.herokuapp.com/uploads"+fileName;
-      console.log(linkImage);
+      let linkImage = "img/product/"+fileName;
+      console.log("linkImage"+linkImage);
       if(id == 0){
         console.log("taomoi");
 
@@ -107,7 +111,7 @@ router.create = (req,res,next) => {
       }
       else{
         console.log("chinhsua");
-        if(linkImage != "https://shopadmink16.herokuapp.com/uploads"){
+        if(linkImage != "img/product/"){
           console.log("khongcohinh");
           let sql = 'UPDATE products SET name="' + name + '",producer="' + producer + '",category_id= ' + category_id + ' ,price=' + price + ', quantity= ' + quantity + ' , image= "' + linkImage + '" ,description= "' + description + '" WHERE id=' + id;
           con.query(sql);
