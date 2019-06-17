@@ -61,6 +61,7 @@ router.list = (req, res, next) => {
         var x = new product(element.id, element.name, element.price,element.producer,element.description,element.quantity, element.cateName, element.image);
         productsAll.push(x);
       })
+      console.log("asas");
       res.render('product/product',{products: productsAll, categories: categoriesAll,user: req.user})
     });
   });

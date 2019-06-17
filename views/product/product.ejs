@@ -81,7 +81,7 @@
                                 id="quantity" name="quantity">
                         </div>
                     </div>
-                </div>
+                </div> //làm sao để coi lỗi,bth t chạy để coi nó báo lỗi ở dưới temonal với qua bên web coi lỗi
                 <div class="form-group">
                         <div class="row">
                             <div class="col-md-3">
@@ -129,14 +129,15 @@
                                    id="image" name="image">
                         </div>
                     </div>
-                
+
                 <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
                         <button type="submit" class="btn btn-primary">Lưu</button>
                     </div>
+                </div>
             </form>
         </div>
-            
+
         </div>
     </div>
 </div>
@@ -144,16 +145,16 @@
     <!-- Start Banner Area -->
 
     <section class="banner-area organic-breadcrumb">
-        
+
         <div class="container">
             <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
                 <div class="col-first">
                     <h1>Quản lý sản phẩm trên gian hàng</h1>
-                   
+
                 </div>
             </div>
         </div>
-        
+
     </section>
     <!-- End Banner Area -->
 
@@ -177,8 +178,8 @@
                                     <th scope="col">Giá</th>
                                     <th scope="col">Số lượng </th>
                                     <th scope="col">Nhà sản xuất</th>
-                                    <th scope="col">Mô tả</th>   
-                                    <th scope="col">Sửa</th>    
+                                    <th scope="col">Mô tả</th>
+                                    <th scope="col">Sửa</th>
                                     <th scope="col">Xóa</th>
                                 </tr>
                             </thead>
@@ -187,7 +188,7 @@
                                         <tr>
                                             <td><%= products[i].id %></td>
                                             <td><%= products[i].name %></td>
-                                            <td><img width="80" height="80" src=<%= products[i].image %>></td>
+                                            <td><img width="80" height="80" src="<%= products[i].image %>"></td>
                                             <td><%= products[i].price %></td>
                                             <td><%= products[i].quantity %></td>
                                             <td><%= products[i].producer %></td>
@@ -207,7 +208,7 @@
                                             </td>
                                         </tr>
                                         <%}
-                                    %>    
+                                    %>
                             </tbody>
                         </table>
                 </div>
@@ -245,7 +246,7 @@
     <script src="js/main.js"></script>
 <script>
             var  rIndex,table = document.getElementById("table-data");
-            
+
                    $(".getData").click(function () {
                        for (var i = 1; i < table.rows.length; i++) {
                            table.rows[i].onclick = function () {
