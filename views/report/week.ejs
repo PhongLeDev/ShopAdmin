@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/fav.png">
+    <!-- Author Meta -->
+    <meta name="author" content="CodePixar">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Thống kê báo cáo</title>
+    <!--
+        CSS
+        ============================================= -->
+    <link rel="stylesheet" href="css/linearicons.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/themify-icons.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/nouislider.min.css">
+    <link rel="stylesheet" href="css/ion.rangeSlider.css" />
+    <link rel="stylesheet" href="css/ion.rangeSlider.skinFlat.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body >
+
+<!-- Start Header Area -->
+<nav class="header-navbar navbar navbar-with-menu navbar-fixed-top navbar-semi-light bg-gradient-x-grey-blue">
+
+    <% include ./../default/header %>
+</nav>
+<% include ./../default/menu %>
+<% include ./../default/footer %>
+<div class="app-content content container-fluid">
+    <div class="content-wrapper">
+        <div class="content-body">
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title" id="horz-layout-card-center">Tìm kiếm</h4>
+                            <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+                        </div>
+                        <div class="card-body collapse in">
+                            <div class="card-block">
+                                <form class="form form-horizontal" action="/thong-ke-bao-cao/ngay"
+                                      method='GET'>
+                                    <div class="form-group col-md-4">
+                                        <label>Ngày</label>
+                                        <input type="date" id="from" value="<%=to%>" class="form-control" name="from">
+                                    </div>
+
+                                    <div class="form-group col-md-4">
+                                        <label>Xem kết quả</label></br />
+                                        <button id="btnSearch" type="submit" class="btn btn-primary input-lg">
+                                            <i class="fa fa-check-square-o"></i> Xem
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-12 col-lg-12">
+                    <div class="card">
+
+                        <div class="card-body">
+                            <div class="card-block">
+                                <ul class="nav nav-tabs nav-underline no-hover-bg">
+                                    <li class="nav-item"><a class="nav-link active" id="base-tab31"
+                                                            data-toggle="tab" aria-controls="tab31" href="#tab31"
+                                                            aria-expanded="true">THỐNG KÊ NGÀY</a></li>
+
+                                </ul>
+                                <h2>Doanh thu trong ngày <strong><%=to%></strong></h2>
+                                <div class="tab-content px-1 pt-1">
+                                    <!-- ========= form tab 1 ======== -->
+
+
+                                    <div role="tabpanel" class="tab-pane active" id="tab31" aria-expanded="true"
+                                         aria-labelledby="base-tab31">
+
+                                        <section id="chartjs-line-charts">
+                                            <!-- Line Chart -->
+                                            <div class="row">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <!-- Pie chart -->
+                                                        <div class="row match-height">
+                                                            <div class="col-sm-12">
+                                                                <div id="pie_chart"></div>
+                                                                <!-- Line chart -->
+                                                                <div class="col-sm-12">
+                                                                    <div id="line_chart"></div>
+                                                                </div>
+                                                                <hr>
+                                                                <br>
+                                                                <!-- Line chart -->
+                                                                <div class="col-sm-12">
+                                                                    <div id="bar_chart"></div>
+                                                                </div>
+
+                                                                <!-- Line chart -->
+                                                                <div class="col-sm-12">
+                                                                    <div id="revenue_chart"></div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </section>
+                                        <div class="row">
+                                            <div class="col-xs-12">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <h4 class="card-title" id="horz-layout-card-center">Thông
+                                                            tin báo cáo</h4>
+                                                    </div>
+                                                    <div class="dataTables_scroll">
+                                                        <div class="card-body collapse in">
+                                                            <div class="table-responsive">
+                                                                <table class="table table-bordered mb-0">
+                                                                    <thead>
+                                                                    <tr>
+                                                                        <th>Giờ</th>
+                                                                        <th>Doanh thu</th>
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                    <% for(var i=0; i< reportDays.length; i++){ %>
+                                                                        <tr>
+                                                                            <td><%= reportDays[i].create %>h</td>
+                                                                            <td><%= reportDays[i].total %> vnđ</td>
+                                                                        </tr>
+                                                                    <%}%>
+                                                                    <tr>
+                                                                        <td><strong>Tổng cộng</strong></td>
+                                                                        <td><strong><%= totalAmount %> vnđ</strong></td>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End footer Area -->
+
+<script src="js/vendor/jquery-2.2.4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+        crossorigin="anonymous"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/jquery.ajaxchimp.min.js"></script>
+<script src="js/jquery.nice-select.min.js"></script>
+<script src="js/jquery.sticky.js"></script>
+<script src="js/nouislider.min.js"></script>
+<script src="js/countdown.js"></script>
+<script src="js/jquery.magnific-popup.min.js"></script>
+<script src="js/owl.carousel.min.js"></script>
+<!--gmaps Js-->
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+<script src="js/gmaps.min.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<script type="text/javascript">
+
+    // Load the Visualization API and the piechart package.
+    google.load('visualization', '1.0', {
+        'packages': ['corechart']
+    });
+    // Set a callback to run when the Google Visualization API is loaded.
+    google.setOnLoadCallback(drawChart);
+
+    // draws it.
+    function drawChart() {
+
+        // Create the data table.
+        var data = google.visualization.arrayToDataTable([
+            ['Report', 'Doanh thu'],
+            <% for(var i=0; i< reportDays.length; i++){ %>
+            ['<%=reportDays[i].create%>h',<%=reportDays[i].total%>],
+            <%}%>
+        ]);
+        // Set chart options
+        var options = {
+            'title': 'Báo Cáo Doanh thu Theo Ngày',
+            is3D: true,
+            pieSliceText: 'label',
+            tooltip: { showColorCode: true },
+            'width': 900,
+            'height': 400
+        };
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('pie_chart'));
+        chart.draw(data, options);
+
+        var line_chart = new google.visualization.LineChart(document.getElementById('line_chart'));
+        line_chart.draw(data, options);
+
+        var bar_chart = new google.visualization.ColumnChart(document.getElementById('bar_chart'));
+        bar_chart.draw(data, options);
+    }
+</script>
+</body>
+
+</html>

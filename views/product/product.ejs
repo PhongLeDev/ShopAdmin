@@ -96,6 +96,21 @@
                 <div class="form-group">
                     <div class="row">
                         <div class="col-md-3">
+                            <label for="message-text" class="col-form-label">Gian hàng:</label>
+                        </div>
+                        <div class="col-md-9">
+                            <select id="category_id" class="select2 form-control" name="category_id">
+                                <% for(var i=0; i< categories.length; i++){ %>
+                                    <option value="<%= categories[i].id %>"><%= categories[i].name %>
+                                    </option>
+                                <%}%>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
                             <label for="message-text" class="col-form-label">Mô tả:</label>
                         </div>
                         <div class="col-md-9">
@@ -104,6 +119,16 @@
                         </div>
                     </div>
                 </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label for="recipient-name" class="col-form-label">Hình ảnh:</label>
+                        </div>
+                        <div class="col-md-9">
+                            <input type="file" class="form-control" placeholder="Số lượng"
+                                   id="image" name="image">
+                        </div>
+                    </div>
                 
                 <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Đóng</button>
@@ -148,6 +173,7 @@
                                 <tr>
                                     <th scope="col">Id</th>
                                     <th scope="col">Tên sản phẩm</th>
+                                    <th scope="col">Hình ảnh</th>
                                     <th scope="col">Giá</th>
                                     <th scope="col">Số lượng </th>
                                     <th scope="col">Nhà sản xuất</th>
@@ -161,10 +187,12 @@
                                         <tr>
                                             <td><%= products[i].id %></td>
                                             <td><%= products[i].name %></td>
+                                            <td><img width="80" height="80" src=<%= products[i].image %>></td>
                                             <td><%= products[i].price %></td>
                                             <td><%= products[i].quantity %></td>
                                             <td><%= products[i].producer %></td>
                                             <td><%= products[i].description %></td>
+                                            <td><%= products[i].category_id %></td>
                                             <td>
                                                     <button data-toggle="modal" data-target="#exampleModal"
                                                         data-original-title="Sửa thông tin" type="button"

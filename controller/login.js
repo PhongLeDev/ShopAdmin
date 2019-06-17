@@ -8,7 +8,14 @@ var listUser = [];
 
 /* GET home page. */
 router.home =  (req, res, next) => {
-
+    // /*res.render('login/login', { title: 'Login' });*/
+    // if(req.isAuthenticated()) {
+    //     res.render('index', { title: 'Quản lí bán hàng' ,user: req.user});
+    // }
+    // else {
+    //     req.flash('loginMessage')
+    //     res.redirect('/login');
+    // }
     res.render('login/login');
 
 };
@@ -17,10 +24,10 @@ router.logout=(req,res,next)=> {
     req.logout();
     res.redirect('/login');
 }
-//no xac nhan tai khoan o cho~ nao
+
 router.postLogin = (req,res,next) =>{
     passport.authenticate('local-login',{
-        successRedirect: '/abc',
+        successRedirect: '/',
         failureRedirect: '/login',
         failureFlash: true
     },function(err, user, info) {
