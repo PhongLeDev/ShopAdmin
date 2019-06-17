@@ -4,8 +4,11 @@
     <list default="true" id="6e90d4dd-139c-4620-b1e3-bd0cf27dee18" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controller/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/product.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/topProduct.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/topProduct.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/product/product.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/product/product.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/top/topProduct.ejs" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -20,31 +23,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/index.js">
+        <entry file="file://$PROJECT_DIR$/controller/product.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+            <state relative-caret-position="-29">
+              <caret line="56" selection-start-line="56" selection-end-line="56" />
+              <folding>
+                <element signature="e#370#532#0" />
+                <element signature="e#573#668#0" />
+                <element signature="e#632#666#0" />
+                <element signature="n#!!block;n#checkFileType#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/product/product.ejs">
+        <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
+            <state relative-caret-position="148">
+              <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-end-line="19" />
+              <folding>
+                <element signature="n#!!block;n#isLoggedIn#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/controller/product.js">
+        <entry file="file://$PROJECT_DIR$/views/product/product.ejs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="132" column="6" lean-forward="true" selection-start-line="132" selection-start-column="6" selection-end-line="132" selection-end-column="6" />
-              <folding>
-                <element signature="n#!!block;n#checkFileType#0" />
-              </folding>
+            <state relative-caret-position="311">
+              <caret line="259" selection-start-line="259" selection-end-line="259" />
             </state>
           </provider>
         </entry>
@@ -60,6 +69,7 @@
       <find>categoryId</find>
       <find>zzz</find>
       <find>table</find>
+      <find>giá</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -103,8 +113,8 @@
         <option value="$PROJECT_DIR$/model/top.js" />
         <option value="$PROJECT_DIR$/controller/tops.js" />
         <option value="$PROJECT_DIR$/views/report/month.ejs" />
-        <option value="$PROJECT_DIR$/controller/product.js" />
         <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/controller/product.js" />
         <option value="$PROJECT_DIR$/views/product/product.ejs" />
       </list>
     </option>
@@ -123,6 +133,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -154,25 +165,12 @@
               <item name="ShopAdmin" type="b2602c69:ProjectViewProjectNode" />
               <item name="ShopAdmin" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="order" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ShopAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ShopAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="product" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ShopAdmin" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ShopAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="report" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -283,15 +281,20 @@
       <workItem from="1560720802286" duration="1645000" />
       <workItem from="1560722591780" duration="1204000" />
       <workItem from="1560751753660" duration="1713000" />
-      <workItem from="1560753500108" duration="792000" />
+      <workItem from="1560753500108" duration="1554000" />
+      <workItem from="1560759844908" duration="1771000" />
+      <workItem from="1560761654469" duration="1783000" />
+      <workItem from="1560763470331" duration="1791000" />
+      <workItem from="1560765286550" duration="740000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="74449000" />
+    <option name="totallyTimeSpent" value="81296000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49918166" visible="true" weight="0.24330357" />
       <window_info id="Structure" order="1" sideWeight="0.5008183" side_tool="true" weight="0.25" />
@@ -307,7 +310,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.5499182" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.5400982" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -328,7 +331,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../Login_v13/index.html" />
     <entry file="file://$PROJECT_DIR$/connect/config.js" />
     <entry file="file://$PROJECT_DIR$/connect/connection.js" />
     <entry file="file://$PROJECT_DIR$/../Nguyenn/trunk/node_modules/express/lib/router/route.js" />
@@ -442,13 +444,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/product.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controller/categories.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -524,13 +519,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="398">
           <caret line="171" column="6" selection-start-line="171" selection-start-column="6" selection-end-line="171" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/default/header.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="41" column="29" lean-forward="true" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -631,27 +619,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
+    <entry file="file://$PROJECT_DIR$/model/product.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="21" column="30" lean-forward="true" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+        <state relative-caret-position="51">
+          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/product/product.ejs">
+    <entry file="file://$PROJECT_DIR$/views/default/header.ejs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="139" lean-forward="true" selection-start-line="139" selection-end-line="139" />
+        <state relative-caret-position="544">
+          <caret line="32" column="33" lean-forward="true" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/mysql/lib/protocol/Protocol.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="298" column="3" lean-forward="true" selection-start-line="298" selection-start-column="3" selection-end-line="298" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="18" column="19" lean-forward="true" selection-start-line="18" selection-end-line="19" />
+          <folding>
+            <element signature="n#!!block;n#isLoggedIn#0" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/product.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="132" column="6" lean-forward="true" selection-start-line="132" selection-start-column="6" selection-end-line="132" selection-end-column="6" />
+        <state relative-caret-position="-29">
+          <caret line="56" selection-start-line="56" selection-end-line="56" />
           <folding>
+            <element signature="e#370#532#0" />
+            <element signature="e#573#668#0" />
+            <element signature="e#632#666#0" />
             <element signature="n#!!block;n#checkFileType#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/product/product.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="259" selection-start-line="259" selection-end-line="259" />
         </state>
       </provider>
     </entry>

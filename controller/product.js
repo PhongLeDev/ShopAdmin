@@ -54,6 +54,7 @@ router.list = (req, res, next) => {
   con.query('select * from products', function (err, rows, fields) {
     if (err) throw err
     con.query('select p.id, p.name, p.price,p.producer,p.description,p.quantity, c.name as cateName,p.image from products p, categories c WHERE p.category_id = c.id', function (err, rows, fields)
+
     {
       if (err) throw err
       productsAll=[];
@@ -61,7 +62,6 @@ router.list = (req, res, next) => {
         var x = new product(element.id, element.name, element.price,element.producer,element.description,element.quantity, element.cateName, element.image);
         productsAll.push(x);
       })
-      console.log("asas");
       res.render('product/product',{products: productsAll, categories: categoriesAll,user: req.user})
     });
   });
@@ -77,8 +77,8 @@ router.create = (req,res,next) => {
       if(file == undefined){
         fileName="";
       }
-      else{
-        fileName = file.filename;
+      else {
+          fileName = file.filename;
       }
       let name = req.body.name;
       let id = req.body.id;
@@ -87,22 +87,34 @@ router.create = (req,res,next) => {
       let description = req.body.description;
       let quantity = req.body.quantity;
       let category_id = req.body.category_id;
-      console.log(id);
-      console.log(name);
-      let linkImage = ""+fileName;//them link heroku vao ""
+      console.log("id"+id);
+      console.log("price"+price);
+      console.log("producer"+producer);
+      console.log("description"+description);
+      console.log("quantity"+quantity);
+
+      console.log("category_id"+category_id);
+
+      console.log("name"+name);
+      console.log("fileName"+fileName);
+      let linkImage = "https://shopadmink16.herokuapp.com/uploads"+fileName;
       console.log(linkImage);
       if(id == 0){
+        console.log("taomoi");
 
-        let sql='INSERT INTO products(category_id,name,price,producer,quantity,image,detail) VALUES ('+category_id+',"'+name+'","'+producer+'",'+price+','+quantity+',"'+linkImage+'","'+description+'")';
+        let sql='INSERT INTO products(category_id,name,producer,price,quantity,image,description) VALUES ('+category_id+',"'+name+'","'+producer+'",'+price+','+quantity+',"'+linkImage+'","'+description+'")';
         con.query(sql);
       }
       else{
-        if(linkImage == "/"){//them link heroku vao ""
-          let sql = 'UPDATE products SET name="'+name+'",category_id= '+category_id+' ,price='+price+', quantity= '+quantity+' ,detail= "'+description+'" WHERE id='+id;
+        console.log("chinhsua");
+        if(linkImage != "https://shopadmink16.herokuapp.com/uploads"){
+          console.log("khongcohinh");
+          let sql = 'UPDATE products SET name="' + name + '",producer="' + producer + '",category_id= ' + category_id + ' ,price=' + price + ', quantity= ' + quantity + ' , image= "' + linkImage + '" ,description= "' + description + '" WHERE id=' + id;
           con.query(sql);
         }
-        else{
-          let sql = 'UPDATE products SET name="'+name+'",id_category= '+category_id+' ,price='+price+', quantity= '+quantity+' , image= "'+linkImage+'" ,detail= "'+description+'" WHERE id='+id;
+        else {//t hiểu rồi đợi tí
+          console.log("cohinh");
+          let sql = 'UPDATE products SET name="' + name + '",producer="' + producer + '",category_id= ' + category_id + ' ,price=' + price + ', quantity= ' + quantity + ' , image= "' + linkImage + '" ,description= "' + description + '" WHERE id=' + id;
           con.query(sql);
         }
       }
@@ -110,7 +122,7 @@ router.create = (req,res,next) => {
         if (err) throw err
         productsAll = [];
         rows.forEach(element => {
-          var x = new product(element.id, element.name, element.price,element.producer, element.detail,element.quantity,element.category_id,element.image,);
+          var x = new product(element.id, element.name, element.price,element.producer, element.description,element.quantity,element.category_id,element.image);
           productsAll.push(x);
         })
       });
@@ -128,7 +140,7 @@ router.delete = (req,res,next) => {
     if (err) throw err
     productsAll = [];
     rows.forEach(element => {
-      var x = new product(element.id, element.name, element.price, element.producer, element.description, element.quantity);
+      var x = new product(element.id, element.name, element.price, element.producer, element.description, element.quantity,element.category_id,element.image);
       productsAll.push(x);
     })
   });

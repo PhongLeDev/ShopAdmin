@@ -4,7 +4,6 @@ var router = express.Router();
 var index = require("../controller/index");
 var product = require("../controller/product");
 var user = require("../controller/user");
-var topProduct = require("../controller/topProduct");
 var login = require("../controller/login");
 var signUp = require("../controller/signUp");
 var category = require('../controller/categories');
@@ -22,9 +21,8 @@ router.post('/product/delete/:id',product.delete);
 router.get('/user',user.list);
 router.post('/user/create',user.create);
 router.get('/user/detele/:id', user.delete);
-router.get('/topProduct',topProduct.home);
-router.get('/signup',signUp.home); // dang ki
-router.post('/signUp/create',signUp.create); // xac nhan dang ki
+//router.get('/signup',signUp.home); // dang ki
+//router.post('/signUp/create',signUp.create); // xac nhan dang ki
 router.get('/category',category.list);
 router.post('/category/create' , category.create);
 router.get('/don-hang', order.list);
