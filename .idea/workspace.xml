@@ -2,32 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6e90d4dd-139c-4620-b1e3-bd0cf27dee18" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/img/product/image-1560773504078.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/product/image-1560773845659.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/product/image-1560788704115.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/product/image-1560789010872.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/product/image-1560789879111.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/product/image-1560791949949.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/product/image-1560791987549.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/product/image-1560792441964.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/categories.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/categories.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/employees.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/employees.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/orders.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/orders.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/product.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/product.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/controller/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/employees.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/employees.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/order.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/order.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/category/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/category/index.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/default/header.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/default/header.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/employee/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/employee/index.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/order/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/order/index.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/product/product.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/product/product.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/user/user.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/user/user.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/login/login.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/login/login.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/signUp/signUp.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/signUp/signUp.ejs" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/node_modules/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -40,17 +18,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/controller/employees.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -91,9 +59,7 @@
         <option value="$PROJECT_DIR$/controller/signUp.js" />
         <option value="$PROJECT_DIR$/connect/passport.js" />
         <option value="$PROJECT_DIR$/views/default/header_login.ejs" />
-        <option value="$PROJECT_DIR$/views/signUp/signUp.ejs" />
         <option value="$PROJECT_DIR$/../index.js" />
-        <option value="$PROJECT_DIR$/views/login/login.ejs" />
         <option value="$PROJECT_DIR$/model/category.js" />
         <option value="$PROJECT_DIR$/model/product.js" />
         <option value="$PROJECT_DIR$/node_modules/express/lib/router/route.js" />
@@ -111,7 +77,6 @@
         <option value="$PROJECT_DIR$/model/order.js" />
         <option value="$PROJECT_DIR$/controller/orders.js" />
         <option value="$PROJECT_DIR$/controller/user.js" />
-        <option value="$PROJECT_DIR$/views/default/header.ejs" />
         <option value="$PROJECT_DIR$/controller/index.js" />
         <option value="$PROJECT_DIR$/controller/login.js" />
         <option value="$PROJECT_DIR$/routes/index.js" />
@@ -120,10 +85,13 @@
         <option value="$PROJECT_DIR$/views/product/product.ejs" />
         <option value="$PROJECT_DIR$/views/user/user.ejs" />
         <option value="$PROJECT_DIR$/controller/employees.js" />
+        <option value="$PROJECT_DIR$/views/default/header.ejs" />
+        <option value="$PROJECT_DIR$/views/signUp/signUp.ejs" />
+        <option value="$PROJECT_DIR$/views/login/login.ejs" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -137,7 +105,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -153,17 +120,36 @@
             <path>
               <item name="ShopAdmin" type="b2602c69:ProjectViewProjectNode" />
               <item name="ShopAdmin" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ShopAdmin" type="b2602c69:ProjectViewProjectNode" />
               <item name="ShopAdmin" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="ShopAdmin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShopAdmin" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="default" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ShopAdmin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShopAdmin" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="login" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ShopAdmin" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShopAdmin" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="signUp" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -291,18 +277,18 @@
       <workItem from="1560795081944" duration="1774000" />
       <workItem from="1560797020026" duration="1764000" />
       <workItem from="1560798873304" duration="1777000" />
-      <workItem from="1560800679483" duration="656000" />
+      <workItem from="1560800679483" duration="1786000" />
+      <workItem from="1560803640274" duration="1274000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="101067000" />
+    <option name="totallyTimeSpent" value="103471000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49918166" visible="true" weight="0.23660715" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49918166" visible="true" weight="0.23660715" />
       <window_info id="Structure" order="1" sideWeight="0.5008183" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -316,7 +302,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2667758" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.30769232" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -377,13 +363,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/model/employee.js" />
-    <entry file="file://$PROJECT_DIR$/views/login/login.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="70" column="37" lean-forward="true" selection-start-line="70" selection-start-column="37" selection-end-line="70" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../back up/chính/xong đăng nhập,đăng ký/ShopAdmin/controller/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -544,21 +523,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/product.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="69" column="34" selection-start-line="69" selection-start-column="34" selection-end-line="69" selection-end-column="34" />
-          <folding>
-            <element signature="e#370#536#0" />
-            <element signature="e#577#672#0" />
-            <element signature="n#!!block;n#checkFileType#0" />
-            <element signature="e#1357#2045#0" />
-            <element signature="e#2082#4538#0" />
-            <element signature="e#4575#5044#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/model/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -581,20 +545,6 @@
             <element signature="e#210#554#0" />
             <element signature="e#593#1086#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/default/header.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="45" lean-forward="true" selection-start-line="45" selection-end-line="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/signUp/signUp.ejs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="74" column="38" lean-forward="true" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -624,16 +574,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="35" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="n#!!block;n#isLoggedIn#0" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -679,10 +619,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/views/default/header.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="612">
+          <caret line="51" column="86" selection-start-line="51" selection-start-column="86" selection-end-line="51" selection-end-column="86" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/signUp/signUp.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="61" column="22" lean-forward="true" selection-start-line="61" selection-start-column="22" selection-end-line="61" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/login/login.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="104" column="44" lean-forward="true" selection-start-line="104" selection-start-column="44" selection-end-line="104" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="n#!!block;n#isLoggedIn#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/product.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="81" column="7" lean-forward="true" selection-start-line="81" selection-start-column="7" selection-end-line="81" selection-end-column="7" />
+          <folding>
+            <element signature="e#370#536#0" />
+            <element signature="e#577#672#0" />
+            <element signature="n#!!block;n#checkFileType#0" />
+            <element signature="e#1357#2045#0" />
+            <element signature="e#4575#5044#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controller/employees.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="4" lean-forward="true" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+        <state relative-caret-position="273">
+          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
         </state>
       </provider>
     </entry>
