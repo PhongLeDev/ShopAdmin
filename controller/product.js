@@ -71,10 +71,11 @@ router.create = (req,res,next) => {
   upload(req, res, (err) => {
     if(err){
       console.log(err);
-    } else {
+    }
+    else {
       let file = req.file;
       let fileName="";
-      let test=req.file.originalname; 
+      let test=req.file.originalname;
       
       if(file == undefined){
         fileName="";
@@ -90,22 +91,18 @@ router.create = (req,res,next) => {
       let quantity = req.body.quantity;
       let category_id = req.body.category_id;
       console.log("test"+test);
-
       console.log("id"+id);
       console.log("price"+price);
       console.log("producer"+producer);
       console.log("description"+description);
       console.log("quantity"+quantity);
-
       console.log("category_id"+category_id);
-
       console.log("name"+name);
       console.log("fileName"+fileName);
       let linkImage = "img/product/"+fileName;
       console.log("linkImage"+linkImage);
       if(id == 0){
         console.log("taomoi");
-
         let sql='INSERT INTO products(category_id,name,producer,price,quantity,image,description) VALUES ('+category_id+',"'+name+'","'+producer+'",'+price+','+quantity+',"'+linkImage+'","'+description+'")';
         con.query(sql);
       }
@@ -116,7 +113,7 @@ router.create = (req,res,next) => {
           let sql = 'UPDATE products SET name="' + name + '",producer="' + producer + '",category_id= ' + category_id + ' ,price=' + price + ', quantity= ' + quantity + ' , image= "' + linkImage + '" ,description= "' + description + '" WHERE id=' + id;
           con.query(sql);
         }
-        else {//t hiểu rồi đợi tí
+        else {
           console.log("cohinh");
           let sql = 'UPDATE products SET name="' + name + '",producer="' + producer + '",category_id= ' + category_id + ' ,price=' + price + ', quantity= ' + quantity + ' , image= "' + linkImage + '" ,description= "' + description + '" WHERE id=' + id;
           con.query(sql);

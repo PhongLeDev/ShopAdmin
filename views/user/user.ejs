@@ -41,7 +41,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Sửa thông tin khách hàng</h5>
+                <h5 class="modal-title" id="exampleModalLabel">Thông tin khách hàng</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -124,7 +124,7 @@
                         <thead>
                             <tr>
                                 <th scope="col">ID</th>
-                                <th scope="col">Ten</th>y
+                                <th scope="col">Ten</th>
                                 <th scope="col">Dia Chi</th>
                                 <th scope="col">SDT</th>
                                 <th scope="col">Sửa</th>
@@ -133,12 +133,12 @@
                         </thead>
                         
                         <tbody>
-                            <% for(var i=0; i< employees.length; i++){ %>
+                            <% for(var i=0; i< user.length; i++){ %>
                                 <tr>
-                                    <td><%= employees[i].id %></td>
-                                    <td><%= employees[i].name %></td>
-                                    <td><%= employees[i].address %></td>
-                                    <td><%= employees[i].phone %></td>
+                                    <td><%= user[i].id %></td>
+                                    <td><%= user[i].name %></td>
+                                    <td><%= user[i].address %></td>
+                                    <td><%= user[i].phone %></td>
                                     <td>
                                             <button data-toggle="modal" data-target="#exampleModal"
                                                 data-original-title="Sửa thông tin" type="button"
@@ -147,7 +147,7 @@
                                     </td>
                                     <td>
                                             <button
-                                                onclick="location.href='user/detele/<%=employees[i].id%>'"
+                                                onclick="location.href='user/detele/<%=user[i].id%>'"
                                                 type="button" class="btn mr-1 mb-1 btn-danger btn-sm"><i
                                                     class="fa fa-times"></i></button>
                                         </td>

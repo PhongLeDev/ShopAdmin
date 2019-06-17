@@ -1,8 +1,8 @@
 
-const user = function(id, name, address, phone){
+const user = function(id, name, phone, address){
   this.id = id;
   this.name = name;
-  this.address = address;
   this.phone = phone;
+  this.address = address;
 }
 module.exports = user;

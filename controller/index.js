@@ -5,10 +5,15 @@ var passport = require('passport');
 
 /* GET home page. */
 router.home =  (req, res, next) => {
-  res.render('home/index', { title: 'Express' });
-};
+  if (req.isAuthenticated()) {
+    res.render('home/index', {title: 'Quản lí bán hàng', user: req.user});
+  } else {
+    req.flash('loginMessage')
+    res.redirect('/login');
+  };
+}
 
-/*router.login = (req, res, next) => {
+router.login = (req, res, next) => {
   res.render('login/login',{ message: req.flash('loginMessage') })
 };
 
@@ -48,6 +53,6 @@ router.postLogin = (req,res,next) =>{
     });
   })(req, res, next);
 
-}*/
+}
 
 module.exports = router;

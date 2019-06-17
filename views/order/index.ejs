@@ -40,46 +40,47 @@
     <% include ./../default/header %>
 </nav>
 <% include ./../default/menu %>
-<div class="app-content content container-fluid">
-    <div class="content-wrapper">
-        <div class="content-body">
+<section class="cart_area">
+    <div class="app-content content container-fluid">
+        <div class="content-wrapper">
+            <div class="content-body">
 
-            <div class="row">
-                <div class="col-xs-12">
+                <div class="row">
                     <div class="card">
                         <div class="card-header">
                             <div class="form-group row">
-                                <div class="col-sm-6">
-                                    <div class="col-md-2">
+                                <div class="col-sm-6 row">
+                                    <div class="col-md-4">
                                         <button type="submit" onclick="done()" class="btn btn-sm btn-success">
-                                            <i class="ft-search"></i> Đã giao
+                                            <i class="ft-search">Đã giao</i>
                                         </button>
                                     </div>
 
-                                    <div class="col-md-2">
+                                    <div class="col-md-4">
                                         <button type="submit" onclick="delivering()" class="btn btn-sm btn-primary">
-                                            <i class="ft-search"></i> Đang giao
+                                            <i class="ft-search">Đang giao</i>
                                         </button>
                                     </div>
 
-                                    <div class="col-md-2">
+                                    <div class="col-md-4">
                                         <button type="submit" onclick="just()" class="btn btn-sm btn-warning">
-                                            <i class="ft-search"></i> Chưa giao
+                                            <i class="ft-search">Chưa giao</i>
                                         </button>
                                     </div>
                                 </div>
                             </div>
                             <hr>
-                            <div class="card-body collapse in">
+                            <div class="card-body  in">
                                 <div class="table-responsive">
                                     <table id="done" class="table table-bordered mb-0" style="">
                                         <thead>
                                         <tr>
                                             <th>Id</th>
                                             <th>Tên khách hàng</th>
-                                            <th>Địa chỉ</th>
-                                            <th>Tổng tiền</th>
                                             <th>Trạng thái</th>
+                                            <th>Tổng tiền</th>
+                                            <th>Ngày tạo</th>
+                                            <th>Địa chỉ</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -87,15 +88,13 @@
                                             <% if(orders[i].status == "2"){ %>
                                                 <tr>
                                                     <td><%= orders[i].id %></td>
-                                                    <td><%= orders[i].customerName %></td>
-                                                    <td><%= orders[i].address %></td>
-                                                    <td><%= orders[i].sumMoney %></td>
-
+                                                    <td><%= orders[i].customer_name %></td>
                                                     <td>
                                                         <div class="tag tag-success">Đã giao</div>
-
                                                     </td>
-
+                                                    <td><%= orders[i].sum_money %></td>
+                                                    <td><%= orders[i].create_at %></td>
+                                                    <td><%= orders[i].address %></td>
                                                 </tr>
                                             <% }%>
                                         <% }%>
@@ -107,10 +106,10 @@
                                         <tr>
                                             <th>Id</th>
                                             <th>Tên khách hàng</th>
-                                            <th>Địa chỉ</th>
-
-                                            <th>Tổng tiền</th>
                                             <th>Trạng thái</th>
+                                            <th>Tổng tiền</th>
+                                            <th>Ngày tạo</th>
+                                            <th>Địa chỉ</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -118,15 +117,15 @@
                                             <% if(orders[i].status == "1"){ %>
                                                 <tr>
                                                     <td><%= orders[i].id %></td>
-                                                    <td><%= orders[i].customerName %></td>
-                                                    <td><%= orders[i].address %></td>
-                                                    <td><%= orders[i].sumMoney %></td>
+                                                    <td><%= orders[i].customer_name %></td>
                                                     <td>
-                                                        <!-- <div class="tag tag-primary">Đang giao</div> -->
                                                         <button
-                                                                onclick="location.href='don-hang/chuyen-trang-thai/<%=orders[i].id%>'"
+                                                                onclick="location.href='order/changestatus/<%=orders[i].id%>'"
                                                                 type="button" class="tag tag-primary">Đang giao</button>
                                                     </td>
+                                                    <td><%= orders[i].sum_money %></td>
+                                                    <td><%= orders[i].create_at %></td>
+                                                    <td><%= orders[i].address %></td>
 
                                                 </tr>
                                             <% }%>
@@ -139,9 +138,10 @@
                                         <tr>
                                             <th>Id</th>
                                             <th>Tên khách hàng</th>
-                                            <th>Địa chỉ</th>
-                                            <th>Tổng tiền</th>
                                             <th>Trạng thái</th>
+                                            <th>Tổng tiền</th>
+                                            <th>Ngày tạo</th>
+                                            <th>Địa chỉ</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -149,15 +149,15 @@
                                             <% if(orders[i].status == "0"){ %>
                                                 <tr>
                                                     <td><%= orders[i].id %></td>
-                                                    <td><%= orders[i].customerName %></td>
-                                                    <td><%= orders[i].address %></td>
-                                                    <td><%= orders[i].sumMoney %></td>
+                                                    <td><%= orders[i].customer_name %></td>
                                                     <td>
-                                                        <!-- <div class="tag tag-warning">Chưa giao</div> -->
                                                         <button
-                                                                onclick="location.href='don-hang/chuyen-trang-thai/<%=orders[i].id%>'"
+                                                                onclick="location.href='order/changestatus/<%=orders[i].id%>'"
                                                                 type="button" class="tag tag-warning">Chưa giao</button>
                                                     </td>
+                                                    <td><%= orders[i].sum_money %></td>
+                                                    <td><%= orders[i].create_at %></td>
+                                                    <td><%= orders[i].address %></td>
 
                                                 </tr>
                                             <% }%>
@@ -172,7 +172,7 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 <% include ./../default/footer %>
 <!-- End footer Area -->
 
@@ -191,6 +191,23 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
 <script src="js/gmaps.min.js"></script>
 <script src="js/main.js"></script>
+<script>
+    function done(){
+        $('#done').attr('style','');
+        $('#delivering').attr('style','display:none;');
+        $('#just').attr('style','display:none;');
+    }
+    function delivering(){
+        $('#done').attr('style','display:none;');
+        $('#delivering').attr('style','');
+        $('#just').attr('style','display:none;');
+    }
+    function just(){
+        $('#done').attr('style','display:none;');
+        $('#delivering').attr('style','display:none;');
+        $('#just').attr('style','');
+    }
+</script>
 </body>
 
 </html>

@@ -1,9 +1,9 @@
 
-const employees = function(id, name, address, phone,username,password){
+const employees = function(id, name, phone, address,username,password){
   this.id = id;
   this.name = name;
-  this.address = address;
   this.phone = phone;
+  this.address = address;
   this.username = username;
   this.password = password;
 }

@@ -6,12 +6,12 @@ var router = express.Router();
 var ordersAll = [];
 
 /* GET home page. */
-router.list = (req, res, next) => {
+router.list = (req, res, next) => {//id, customer_id,customer_name, status, sum_money, create_at, address,phone
   con.query('select * from orders', function (err, rows, fields) {
     if (err) throw err
     ordersAll = [];
     rows.forEach(element => {
-      var x = new order(element.id, element.address, element.customer_name, element.sum_money, element.status);
+      var x = new order(element.id,element.customer_id, element.customer_name, element.status, element.sum_money,element.create_at, element.address, element.phone);
       ordersAll.push(x);
     });
     res.render('order/index',{orders :  ordersAll,user: req.user});
@@ -32,7 +32,7 @@ router.changeStatus = (req, res, next) => {
     }
     let sql = 'UPDATE orders SET status='+r+' WHERE id='+id;
     con.query(sql);
-    res.redirect('/don-hang');
+    res.redirect('/order');
   });
 }
 
