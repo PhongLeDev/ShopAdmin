@@ -135,18 +135,20 @@ router.create = (req,res,next) => {
 
 router.delete = (req,res,next) => {
   let id = req.params.id;
+  console.log('ass'+id);
   let sql = 'DELETE FROM products WHERE id=' + id;
   con.query(sql);
+ 
   con.query('select * from products', function (err, rows, fields) {
     if (err) throw err
     productsAll = [];
     rows.forEach(element => {
-      var x = new product(element.id, element.name, element.price, element.producer, element.description, element.quantity,element.category_id,element.image);
+      var x = new product(element.id, element.name, element.price,element.producer, element.description,element.quantity,element.category_id,element.image);
       productsAll.push(x);
     })
   });
   res.redirect('/product');
-}
+};
 
  
 module.exports = router;

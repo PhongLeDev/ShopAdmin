@@ -52,35 +52,36 @@
                                 <div class="col-sm-6 row">
                                     <div class="col-md-4">
                                         <button type="submit" onclick="done()" class="btn btn-sm btn-success">
-                                            <i class="ft-search">Đã giao</i>
+                                            <i class="ft-search">Đã giao hàng</i>
                                         </button>
                                     </div>
 
                                     <div class="col-md-4">
                                         <button type="submit" onclick="delivering()" class="btn btn-sm btn-primary">
-                                            <i class="ft-search">Đang giao</i>
+                                            <i class="ft-search">Đang giao hàng </i>
                                         </button>
                                     </div>
 
                                     <div class="col-md-4">
-                                        <button type="submit" onclick="just()" class="btn btn-sm btn-warning">
-                                            <i class="ft-search">Chưa giao</i>
+                                        <button type="submit" onclick="just()" class="btn btn-sm btn-danger">
+                                            <i class="ft-search">Đã tiếp nhận</i>
                                         </button>
                                     </div>
                                 </div>
                             </div>
                             <hr>
-                            <div class="card-body  in">
+                            <div class="container">
+                                <div class="cart_inner">
                                 <div class="table-responsive">
-                                    <table id="done" class="table table-bordered mb-0" style="">
+                                    <table class="table" id="done"   style="">
                                         <thead>
                                         <tr>
-                                            <th>Id</th>
-                                            <th>Tên khách hàng</th>
-                                            <th>Trạng thái</th>
-                                            <th>Tổng tiền</th>
-                                            <th>Ngày tạo</th>
-                                            <th>Địa chỉ</th>
+                                            <th scope="col">Id</th>
+                                            <th scope="col">Tên khách hàng</th>
+                                            <th scope="col">Trạng thái</th>
+                                            <th scope="col">Tiền thanh toán</th>
+                                            <th scope="col">Ngày tạo</th>
+                                            <th scope="col">Địa chỉ</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -90,10 +91,10 @@
                                                     <td><%= orders[i].id %></td>
                                                     <td><%= orders[i].customer_name %></td>
                                                     <td>
-                                                        <div class="tag tag-success">Đã giao</div>
+                                                        <div class="tag tag-success">Giao hàng thành công</div>
                                                     </td>
-                                                    <td><%= orders[i].sum_money %></td>
-                                                    <td><%= orders[i].create_at %></td>
+                                                    <td><%= orders[i].sum_money %> VNĐ</td>
+                                                    <td><%= orders[i].created_at %></td>
                                                     <td><%= orders[i].address %></td>
                                                 </tr>
                                             <% }%>
@@ -101,15 +102,15 @@
                                         </tbody>
                                     </table>
 
-                                    <table id="delivering" class="table table-bordered mb-0" style="display:none;">
+                                    <table class="table" id="delivering"   style="display:none;">
                                         <thead>
                                         <tr>
-                                            <th>Id</th>
-                                            <th>Tên khách hàng</th>
-                                            <th>Trạng thái</th>
-                                            <th>Tổng tiền</th>
-                                            <th>Ngày tạo</th>
-                                            <th>Địa chỉ</th>
+                                            <th scope="col">Id</th>
+                                            <th scope="col">Tên khách hàng</th>
+                                            <th scope="col">Trạng thái</th>
+                                            <th scope="col">Tiền thanh toán</th>
+                                            <th scope="col">Ngày tạo</th>
+                                            <th scope="col">Địa chỉ</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -121,10 +122,10 @@
                                                     <td>
                                                         <button
                                                                 onclick="location.href='order/changestatus/<%=orders[i].id%>'"
-                                                                type="button" class="tag tag-primary">Đang giao</button>
+                                                                type="button" class="btn btn-sm btn-primary">Đổi trạng thái</button>
                                                     </td>
-                                                    <td><%= orders[i].sum_money %></td>
-                                                    <td><%= orders[i].create_at %></td>
+                                                    <td><%= orders[i].sum_money %> VNĐ VNĐ</td>
+                                                    <td><%= orders[i].created_at %></td>
                                                     <td><%= orders[i].address %></td>
 
                                                 </tr>
@@ -133,15 +134,15 @@
                                         </tbody>
                                     </table>
 
-                                    <table id="just" class="table table-bordered mb-0" style="display:none;">
+                                    <table class="table" id="just"   style="display:none;">
                                         <thead>
                                         <tr>
-                                            <th>Id</th>
-                                            <th>Tên khách hàng</th>
-                                            <th>Trạng thái</th>
-                                            <th>Tổng tiền</th>
-                                            <th>Ngày tạo</th>
-                                            <th>Địa chỉ</th>
+                                            <th scope="col">Id</th>
+                                            <th scope="col">Tên khách hàng</th>
+                                            <th scope="col">Trạng thái</th>
+                                            <th scope="col">Tiền thanh toán</th>
+                                            <th scope="col">Ngày tạo</th>
+                                            <th scope="col">Địa chỉ</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -153,10 +154,10 @@
                                                     <td>
                                                         <button
                                                                 onclick="location.href='order/changestatus/<%=orders[i].id%>'"
-                                                                type="button" class="tag tag-warning">Chưa giao</button>
+                                                                type="button" class="btn btn-sm btn-danger">Đổi trạng thái</button>
                                                     </td>
-                                                    <td><%= orders[i].sum_money %></td>
-                                                    <td><%= orders[i].create_at %></td>
+                                                    <td><%= orders[i].sum_money %> VNĐ</td>
+                                                    <td><%= orders[i].created_at %></td>
                                                     <td><%= orders[i].address %></td>
 
                                                 </tr>
@@ -164,6 +165,7 @@
                                         <% }%>
                                         </tbody>
                                     </table>
+                                    </div>
                                 </div>
                             </div>
                         </div>

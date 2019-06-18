@@ -11,7 +11,7 @@ router.list = (req, res, next) => {//id, customer_id,customer_name, status, sum_
     if (err) throw err
     ordersAll = [];
     rows.forEach(element => {
-      var x = new order(element.id,element.customer_id, element.customer_name, element.status, element.sum_money,element.create_at, element.address, element.phone);
+      var x = new order(element.id,element.customer_id, element.customer_name, element.status, element.sum_money,element.created_at, element.address, element.phone);
       ordersAll.push(x);
     });
     res.render('order/index',{orders :  ordersAll,user: req.user});

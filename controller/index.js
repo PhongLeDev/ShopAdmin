@@ -22,9 +22,9 @@ router.logout=(req,res,next)=> {
   res.redirect('/login');
 }
 
-router.postLogin = (req,res,next) =>{
+router.signin = (req,res,next) =>{
   passport.authenticate('local-login',{
-    successRedirect: '/abc',
+    successRedirect: '/',
     failureRedirect: '/login',
     failureFlash: true
   },function(err, user, info) {

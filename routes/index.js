@@ -14,39 +14,38 @@ var top = require('../controller/tops');
 /* GET home page. */
 router.get('/',index.home);
 router.get('/login',index.login); //dang nhap
-router.post('/login/create',index.postLogin); //xac nhan dang nhap
+router.post('/login/create',index.signin); //xac nhan dang nhap
 router.get('/signup',signUp.home); // dang ki
 router.post('/signUp/create',signUp.create);
 
-router.get('/category',category.list);
-router.post('/category/create' , category.create);
-router.get('/category/delete/:id',category.delete);
+router.get('/category',requiresLogin,category.list);
+router.post('/category/create' , requiresLogin,category.create);
+router.get('/category/delete/:id',requiresLogin,category.delete);
 
-router.get('/product',product.list);
-router.post('/product/create',product.create);
+router.get('/product',requiresLogin,product.list);
+router.post('/product/create',requiresLogin,product.create);
 router.get('/product/delete/:id',product.delete);
 
-router.get('/employee',employee.list);
-router.post('/employee/create',employee.create);
-router.get('/employee/delete/:id',employee.delete);
+router.get('/employee',requiresLogin,employee.list);
+router.post('/employee/create',requiresLogin,employee.create);
+router.get('/employee/changeStatus/:id',requiresLogin,employee.changeStatus);
 
-router.get('/user',user.list);
-router.post('/user/create',user.create);
-router.get('/user/delete/:id', user.delete);
+router.get('/user',requiresLogin,user.list);
+router.post('/user/create',requiresLogin,user.create);
+router.get('/user/delete/:id', requiresLogin,user.delete);
 
-router.get('/order', order.list);
-router.get('/order/changestatus/:id',order.changeStatus);
+router.get('/order', requiresLogin,order.list);
+router.get('/order/changestatus/:id',requiresLogin,order.changeStatus);
 
-
-
-function isLoggedIn(req, res, next) {
-    // if user is authenticated in the session, carry on
-    if (req.isAuthenticated())
-        return next();
-
-    // if they aren't redirect them to the home page
-    res.redirect('/');
-}
+    
+function requiresLogin(req, res, next) {
+	if (req.isAuthenticated()) {
+	  return next();
+	} else {
+		req.flash('loginMessage', 'You must be logged in to view this page.')
+		return res.redirect('/login');
+	}
+  }
 
 
 module.exports = router;
